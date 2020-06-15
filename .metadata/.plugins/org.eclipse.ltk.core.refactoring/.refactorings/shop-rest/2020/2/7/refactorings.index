@@ -1,0 +1,45 @@
+1581223169222	Delete element
+1581224786817	Copy folder
+1581241345916	Copy elements
+1581245896136	Delete element
+1581247138067	Delete element
+1581247283913	Delete element
+1581250480839	Extract local variable 'criteria'
+1581250524524	Extract local variable 'list'
+1581251884047	Extract local variable 'catResult'
+1581254073562	Extract local variable 'json'
+1581310259584	Delete element
+1581313125067	Copy compilation unit
+1581313134376	Rename type 'IContentCategoryService'
+1581313579287	Extract local variable 'criteria'
+1581313709692	Extract local variable 'list'
+1581313917452	Copy compilation unit
+1581313924120	Delete element
+1581314091936	Copy compilation unit
+1581314100818	Copy compilation unit
+1581314113132	Copy compilation unit
+1581314117504	Delete element
+1581314122823	Delete element
+1581314130181	Delete element
+1581332412755	Extract local variable 'criteria'
+1581332458842	Extract local variable 'list'
+1581332824627	Extract local variable 'list'
+1581484998824	Extract local variable 'string'
+1581510746266	Extract local variable 'string'
+1581510987381	Extract local variable 'jedis'
+1581511038878	Extract local variable 'string'
+1581511616849	Copy file
+1581512834170	Extract local variable 'jedis'
+1581512846257	Extract local variable 'string'
+1581516474543	Extract local variable 'jedis'
+1581516498397	Extract local variable 'string'
+1581517958393	Copy file
+1581518140096	Extract local variable 'result'
+1581518259490	Extract local variable 'list'
+1581568623987	Extract local variable 'result'
+1581569023839	Extract local variable 'result'
+1581656379117	Copy file
+1581656504258	Copy folders
+1581661603065	Copy file
+1581662795362	Extract local variable 'response'
+1581662836383	Extract local variable 'results'

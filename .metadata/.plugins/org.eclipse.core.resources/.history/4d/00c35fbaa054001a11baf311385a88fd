@@ -1,0 +1,80 @@
+package cxm.shop.sso.service.imp;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.util.DigestUtils;
+
+import cxm.shop.common.utils.TaotaoResult;
+import cxm.shop.mapper.TbUserMapper;
+import cxm.shop.pojo.TbUser;
+import cxm.shop.pojo.TbUserExample;
+import cxm.shop.pojo.TbUserExample.Criteria;
+import cxm.shop.sso.service.IUserService;
+
+/**
+ * 用户管理service
+ * @author	xiaoman
+ * @Date 2020年2月20日下午8:53:00
+ */
+@Service
+public class UserService  implements IUserService{
+	@Autowired
+	private TbUserMapper usermapper;
+	
+	//数据类型校验
+	@Override
+	public TaotaoResult checkDate(String content, int type) {
+		//创建查询条件
+		TbUserExample example=new TbUserExample();
+		Criteria criteria = example.createCriteria();
+		//type为类型，可选参数1、2、3分别代表username、phone、email
+		//用户名校验
+		if(type==1) {
+			criteria.andUsernameEqualTo(content);
+		//手机校验
+		}else if(type==2) {
+			criteria.andPhoneEqualTo(content);
+		//邮箱校验
+		}else if(type==3) {
+			criteria.andEmailEqualTo(content);
+		}
+		//执行查询
+		List<TbUser> list = usermapper.selectByExample(example);
+		if(list==null || list.size()==0) {
+			return TaotaoResult.ok(true);
+		}
+		return TaotaoResult.ok(false);
+	}
+	//注册用户
+	@Override
+	public TaotaoResult createUser(TbUser user) {
+		user.setUpdated(new Date());
+		user.setCreated(new Date());
+		//md5加密
+		user.setPassword(DigestUtils.md5DigestAsHex(user.getPassword().getBytes()));;
+		
+		usermapper.insert(user);
+		return TaotaoResult.ok();
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

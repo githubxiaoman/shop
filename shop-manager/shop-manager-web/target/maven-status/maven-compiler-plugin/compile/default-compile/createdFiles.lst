@@ -1,0 +1,8 @@
+cxm\shop\controller\PageController.class
+cxm\shop\controller\ItemController.class
+cxm\shop\controller\ContentController.class
+cxm\shop\controller\ItemCatController.class
+cxm\shop\controller\PictureController.class
+cxm\shop\controller\ContentCategoryController.class
+cxm\shop\controller\ItemParamController.class
+cxm\shop\controller\ItemParamItemController.class

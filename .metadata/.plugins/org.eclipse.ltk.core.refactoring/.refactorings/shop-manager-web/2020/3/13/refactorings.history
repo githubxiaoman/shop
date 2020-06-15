@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy package &apos;cxm.shop.controller&apos; to &apos;springmvc-backend/src/main/java&apos;&#x0D;&#x0A;- Original project: &apos;shop-manager-web&apos;&#x0D;&#x0A;- Destination element: &apos;springmvc-backend/src/main/java&apos;&#x0D;&#x0A;- Original element: &apos;shop-manager-web/src/main/java/cxm.shop.controller&apos;" description="Copy package" destination="=springmvc-backend/src\/main\/java" element1="/src\/main\/java&lt;cxm.shop.controller" flags="589830" fragments="1" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyPackages" stamp="1585057628317" version="1.0"/>
+</session>

@@ -1,0 +1,11 @@
+cxm\shop\search\controller\ItemController.class
+cxm\shop\search\service\ISearchService.class
+cxm\shop\search\mapper\Itemmapper.class
+cxm\shop\search\dao\imp\SearchDaoImp.class
+cxm\shop\search\service\IItemService.class
+cxm\shop\search\pojo\Item.class
+cxm\shop\search\service\imp\SearchServiceImp.class
+cxm\shop\search\controller\SearchController.class
+cxm\shop\search\dao\ISearchDao.class
+cxm\shop\search\pojo\SearchResult.class
+cxm\shop\search\service\imp\ItemServiceImp.class

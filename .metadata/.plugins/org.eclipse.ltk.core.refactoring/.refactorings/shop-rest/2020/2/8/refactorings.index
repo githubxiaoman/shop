@@ -1,0 +1,11 @@
+1581844797291	Extract local variable 'item'
+1581845078904	Extract local variable 'result'
+1581854785648	Extract local variable 'json'
+1581854866051	Extract local variable 'item'
+1581906013064	Extract local variable 'itemDesc'
+1581906631473	Extract local variable 'criteria'
+1581906687540	Extract local variable 'list'
+1582200929962	Copy elements
+1582200949980	Copy folder
+1582201129133	Copy compilation unit
+1582201152530	Copy compilation units

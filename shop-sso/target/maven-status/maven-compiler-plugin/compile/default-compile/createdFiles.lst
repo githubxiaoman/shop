@@ -1,0 +1,7 @@
+cxm\shop\sso\dao\JedisClient.class
+cxm\shop\sso\service\IUserService.class
+cxm\shop\sso\dao\imp\JedisClientSingle.class
+cxm\shop\sso\service\imp\UserService.class
+cxm\shop\sso\controller\PageController.class
+cxm\shop\sso\controller\UserController.class
+cxm\shop\sso\dao\imp\JedisClientCluster.class

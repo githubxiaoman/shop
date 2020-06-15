@@ -1,0 +1,64 @@
+package cxm.shop.rest.service.imp;
+
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import cxm.shop.common.utils.JsonUtils;
+import cxm.shop.common.utils.TaotaoResult;
+import cxm.shop.mapper.TbItemMapper;
+import cxm.shop.pojo.TbItem;
+import cxm.shop.rest.dao.JedisClient;
+import cxm.shop.rest.service.IItemService;
+
+/**
+ * 商品信息管理service
+ * @author	xiaoman
+ * @Date 2020年2月16日下午5:18:24
+ */
+@Service
+public class ItemService implements IItemService {
+	@Autowired
+	private TbItemMapper itemmapper;
+	@Autowired
+	private JedisClient jedisClient;
+	
+	@Value("${REDIS_ITEM_KEY}")
+	private String REDIS_ITEM_KEY;
+	
+	@Value("${REDIS_ITEM_EXPIRE}")
+	private Integer REDIS_ITEM_EXPIRE;
+	@Override
+	public TaotaoResult getItemBaseInfo(long itemId) {
+		try {
+			//添加缓存逻辑
+			//从缓存中取商信息
+			String json = jedisClient.get(REDIS_ITEM_KEY+";"+itemId+":base");
+			//判断json是否有值
+			if(!StringUtils.isBlank(json)) {
+				TbItem item = JsonUtils.jsonToPojo(json, TbItem.class);
+				return TaotaoResult.ok(item);
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		//根据商品id查询信息
+		TbItem item = itemmapper.selectByPrimaryKey(itemId);
+		
+		try {
+			//将商品信息写入缓存
+			//并设置过期时间
+			jedisClient.set(REDIS_ITEM_KEY+";"+itemId+":base", JsonUtils.objectToJson(item));
+			//设置有效期
+			jedisClient.expire(REDIS_ITEM_KEY+";"+itemId+":base", REDIS_ITEM_EXPIRE);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		
+		
+		return TaotaoResult.ok(item);
+	}
+	
+}

@@ -1,0 +1,5 @@
+1582533978244	Rename type 'OrderService'
+1582534649670	Extract local variable 'string'
+1582535486208	Extract local variable 'orderDetailId'
+1582537716236	Extract local variable 'result'
+1582556163084	Copy compilation unit
